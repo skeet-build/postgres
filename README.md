@@ -2,6 +2,8 @@
 
 A Model Context Protocol server that provides read-only access to PostgreSQL databases. This server enables LLMs to inspect database schemas and execute read-only queries.
 
+This server is based on https://github.com/modelcontextprotocol/servers/blob/main/src/postgres
+
 ## Components
 
 ### Tools

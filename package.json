@@ -1,6 +1,6 @@
 {
   "name": "@skeet-build/postgres",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "MCP server for interacting with PostgreSQL databases",
   "license": "MIT",
   "author": "Skeet.build, PBC (https://skeet.build)",
