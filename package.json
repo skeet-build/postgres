@@ -1,11 +1,11 @@
 {
-  "name": "@skeet-build/postgres",
+  "name": "@skeetbuild/postgres",
   "version": "0.1.0",
   "description": "MCP server for interacting with PostgreSQL databases",
   "license": "MIT",
   "author": "Skeet.build, PBC (https://skeet.build)",
-  "homepage": "https://modelcontextprotocol.io",
-  "bugs": "https://github.com/modelcontextprotocol/servers/issues",
+  "homepage": "https://skeet.build",
+  "bugs": "https://github.com/skeet-build/postgres/issues",
   "type": "module",
   "bin": {
     "mcp-server-postgres": "dist/index.js"

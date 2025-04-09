@@ -29,7 +29,35 @@ if (args.length === 0) {
   process.exit(1);
 }
 
-const databaseUrl = args[0];
+let databaseUrl = args[0];
+
+// Check if the connection string has a username, password, and database
+try {
+  const url = new URL(databaseUrl);
+  if (!url.pathname || url.pathname === "/") {
+    // Add a default database name if not provided
+    console.log(
+      "No database specified in the connection string, using 'postgres' as default"
+    );
+    url.pathname = "/postgres";
+    databaseUrl = url.toString();
+  }
+
+  // If no username is provided, add a default one
+  if (!url.username) {
+    console.log(
+      "No username specified in the connection string, using 'postgres' as default"
+    );
+    const tempUrl = new URL(databaseUrl);
+    tempUrl.username = "postgres";
+    databaseUrl = tempUrl.toString();
+  }
+} catch (error) {
+  console.error(
+    "Invalid database URL format. Please use: postgresql://[username[:password]@]hostname[:port]/database"
+  );
+  process.exit(1);
+}
 
 const resourceBaseUrl = new URL(databaseUrl);
 resourceBaseUrl.protocol = "postgres:";
