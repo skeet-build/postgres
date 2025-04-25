@@ -43,15 +43,6 @@ try {
     databaseUrl = url.toString();
   }
 
-  // If no username is provided, add a default one
-  if (!url.username) {
-    console.log(
-      "No username specified in the connection string, using 'postgres' as default"
-    );
-    const tempUrl = new URL(databaseUrl);
-    tempUrl.username = "postgres";
-    databaseUrl = tempUrl.toString();
-  }
 } catch (error) {
   console.error(
     "Invalid database URL format. Please use: postgresql://[username[:password]@]hostname[:port]/database"
